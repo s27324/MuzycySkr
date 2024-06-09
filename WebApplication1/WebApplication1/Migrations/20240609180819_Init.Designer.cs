@@ -11,7 +11,7 @@ using WebApplication1.Entities;
 namespace WebApplication1.Migrations
 {
     [DbContext(typeof(MuzykaDbContext))]
-    [Migration("20240609173407_Init")]
+    [Migration("20240609180819_Init")]
     partial class Init
     {
         /// <inheritdoc />

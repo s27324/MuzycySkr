@@ -47,8 +47,8 @@ public class MuzykEfConfiguration: IEntityTypeConfiguration<Muzyk>
             .WithMany(x => x.IdMuzyks)
             .UsingEntity<Dictionary<string, object>>(
                 "MuzykUtwor",
-                x => x.HasOne<Utwor>().WithMany().HasForeignKey("IdUtwor"),
-                x => x.HasOne<Muzyk>().WithMany().HasForeignKey("IdMuzyk"))
+                x => x.HasOne<Utwor>().WithMany().HasForeignKey("IdUtwor").OnDelete(DeleteBehavior.Restrict),
+                x => x.HasOne<Muzyk>().WithMany().HasForeignKey("IdMuzyk").OnDelete(DeleteBehavior.Restrict))
             .HasData(
                 new { IdMuzyk = 1, IdUtwor = 1 },
                 new { IdMuzyk = 2, IdUtwor = 2 }

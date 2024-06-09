@@ -5,6 +5,9 @@ namespace WebApplication1.Entities;
 
 public class MuzykaDbContext: DbContext
 {
+    
+    public virtual DbSet<Muzyk> Muzyks { get; set; }
+    public virtual DbSet<Utwor> Utwors { get; set; }
     protected MuzykaDbContext()
     {
     }
