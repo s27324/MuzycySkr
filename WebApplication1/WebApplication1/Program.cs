@@ -1,11 +1,12 @@
 using Microsoft.EntityFrameworkCore;
+using WebApplication1.Entities;
 
 var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddControllers();
 
-builder.Services.AddDbContext<TripsDbContext>(opt =>
+builder.Services.AddDbContext<MuzykaDbContext>(opt =>
 {
     string connString = builder.Configuration.GetConnectionString("Default");
     opt.UseSqlServer(connString);
